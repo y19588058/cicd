@@ -1,0 +1,54 @@
+1．OpenShiftで利用できるJenkinsのコンテナを利用したCI/CDの実現
+　OpenShiftの操作、モニタリング、トラブルシューティング
+　Jenkinsの操作、モニタリング、トラブルシューティング
+
+2．JenkinsのCI/CDパイプライン構築および手順書作成
+　①Jenkinsとソースリポジトリ（Github）の連携
+　　　・SCMポーリング（ソース更新よりパイプライン実行の自動トリガ）
+　②Jenkinsストレージ永続化
+　③Jenkinsコンテナの作成
+　　メモリの設定、Service作成、Route作成、永続ストレージ作成
+　　Jenkinsコンテナログ監視、トラブルシューティング
+　④Jenkinsプラグインのインストール
+3．Jenkinsでコンパイル環境構築および手順書作成
+　①ソースコンパイル、
+    ・ソースリポジトリの作成
+　　・ソースpullおよびシークレット、
+　　・Gradleコンパイル
+　②Junitテスト、リカバリー、静的チェック
+
+4．ビルド環境構築および手順書作成
+　①ベースイメージの作成（Payara5、JDK11）
+　　・ビルドコンフィグ作成
+　　・Dockerファイル作成
+　　・シークレット作成（GithubからOpenshiftにDockerファイルをプルするためのシークレット）
+　　・ベースイメージStreamの作成
+　②アプリイメージの作成（ベースイメージ+Crust）
+　　・ビルドコンフィグ作成
+　　・Dockerファイル作成
+　　・アプリイメージStreamの作成　　
+
+5．PostgreSQLコンテナ作成および手順書作成
+　　①メモリの設定、Service作成、Route作成、永続ストレージ作成
+6．デプロイ環境作成および手順書作成
+　①デプロイコンフィグ
+　②アプリService作成、Route作成
+　③特権ServiceAccountの作成
+
+
+
+1．OpenShift環境でJenkins、DB、アプリコンテナの構築方法
+2．OpenShift環境でJenkins　Pipeline構築方法
+3．ビルド仕組み
+　・ストラテジー設定、入力の設定（ソース、Dockerfile）
+　・トリガ設定
+　・JenkinsコンテナからビルダーにWARファイルの引き渡す方法
+4．デプロイ仕組み
+　・ストラテジー設定、入力の設定（イメージ）
+　・トリガ設定
+　・特権ServiceAccountの設定
+5．Junit、リカバリー、静的チェックの構築方法、リポートの出力設定方法
+6．JenkinsとGithubの連携
+　・シークレット設定
+　・SCMポーリング設定
+7．ベースイメージJDK11のJVMリソースの設定方法
